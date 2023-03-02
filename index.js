@@ -70,7 +70,7 @@ async function main() {
 	.setContractId(contractId)
 	.setGas(10000000)
 	.setPayableAmount(10)
-	.setFunction("createFungibleTokenPublic",new ContractFunctionParameters().addAddress("0000000000000000000000000000000000001b16"))
+	.setFunction("createFungibleTokenPublic",new ContractFunctionParameters().addAddress("0000000000000000000000000000000000001b16").addUint256(0))
 	.setMaxTransactionFee(new Hbar(10));
 	const contractExecuteSubmit = await contractExecuteTx.execute(client);
 	const contractExecuteRx = await contractExecuteSubmit.getReceipt(client);
